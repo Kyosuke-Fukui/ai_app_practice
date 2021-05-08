@@ -1,0 +1,11 @@
+<h1>カテゴリ予測AI</h1>
+<p>タイトル入力:</p>
+<form action="{% url 'home' %}" method="POST">
+  <input type="text" name="title" />
+  {% csrf_token %}
+  <button type="submit">Send</button>
+</form>
+
+{% if title %}
+<h1>予測結果: {{ title }}</h1>
+{% endif %}
